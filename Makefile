@@ -6,13 +6,13 @@
 #    By: cnysten <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/05 12:54:18 by cnysten           #+#    #+#              #
-#    Updated: 2021/11/05 15:26:51 by cnysten          ###   ########.fr        #
+#    Updated: 2021/11/07 18:11:34 by cnysten          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = test_isf
+NAME = test_libft
 
-SRCS = test_isf.c
+SRCS = test_libft.c test_itoa.c
 
 LIB = ../libft/libft.a
 
