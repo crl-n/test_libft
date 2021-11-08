@@ -6,16 +6,14 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 16:21:22 by cnysten           #+#    #+#             */
-/*   Updated: 2021/11/01 17:03:32 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/11/08 13:02:57 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <assert.h>
-#include <stdio.h>
-#include <string.h>
+#include "test_libft.h"
 
-void	*ft_memset(void *ptr, int x, size_t n);
-
+// This function is not in use atm
+/*
 static void	print_arr(int *arr, size_t n)
 {
 	size_t	i;
@@ -25,20 +23,48 @@ static void	print_arr(int *arr, size_t n)
 		printf("%d, ", arr[i++]);
 	printf("\n");
 }
+*/
+static void	test_adress_is_same(void *expected, void *actual, char *test_name)
+{
+	if (expected != actual)
+		print_failed(test_name);
+	else
+		print_passed(test_name);
+}
 
 
+static void	test_string_is_same(void *expected, void *actual, char *test_name)
+{
+	if (strcmp(expected, actual) != 0)
+		print_failed(test_name);
+	else
+		print_passed(test_name);
+}
+
+void	test_memset(void)
+{
+	print_ft("FT_MEMSET");
+	// Test if memset behaves like ft_memset
+	char	charArr[10] = "Hello.";
+	char	charArr2[10] = "Hello.";
+	char	*result = (char *) malloc(10 * sizeof (char));
+	if (!result)
+		return ;
+	result = ft_memset(charArr, 'x', 5);
+	printf("adr charArr: %p, adr res: %p\n", &charArr, &result);
+	printf("charArr: %s, result: %s\n", charArr, result);
+	test_string_is_same(result, memset(charArr2, 'x', 5), "\"Hello.\" to \"xxxxx.\"");
+	test_adress_is_same(charArr, result, "Pointers are the same");
+}
+
+/*
 int	main(void)
 {
 	int	intArr[10];
 	int	intArr2[10];
-	char	charArr[10] = "Hello.";
-	char	charArr2[10] = "Hello.";
-
 	ft_memset(intArr, 0, 10);
-	ft_memset(charArr, 'x', 5);
 
 	memset(intArr2, 0, 10);
-	memset(charArr2, 'x', 5);
 
 	print_arr(intArr, 10);
 	print_arr(intArr2, 10);
@@ -48,3 +74,4 @@ int	main(void)
 
 	return (0);
 }
+*/
