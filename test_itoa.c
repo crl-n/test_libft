@@ -6,24 +6,24 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 17:19:47 by cnysten           #+#    #+#             */
-/*   Updated: 2021/11/07 18:09:38 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/11/08 11:00:41 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "test_libft.h"
 #include <stdio.h>
 
 static void	test(char *expected, char *actual, char *test_name)
 {
 	if (strcmp(expected, actual) == 0)
-		printf("%s failed", test_name);
+		print_failed(test_name);
 	else
-		printf("%s passed", test_name);
-	puts("\n");
+		print_passed(test_name);
 }	
 
 void	test_itoa(void)
 {
-	printf("FT_ITOA\n");
+	print_ft("FT_ITOA");
 	test("123", ft_itoa(123), "123");
 }
