@@ -6,19 +6,33 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 08:49:49 by cnysten           #+#    #+#             */
-/*   Updated: 2021/11/04 09:49:38 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/11/18 10:45:17 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "test_libft.h"
 
-int	main(void)
+void	test_putnbr(void)
 {
+	print_ft("FT_PUTNBR");
+
+	//printf("ft_putnbr(-42) ");
 	ft_putnbr(-42);
 	ft_putchar('\n');
+
+	//printf("ft_putnbr(0) ");
 	ft_putnbr(0);
 	ft_putchar('\n');
-	ft_putnbr(42);
+
+	//printf("ft_putnbr(182059) ");
+	ft_putnbr(182059);
 	ft_putchar('\n');
-	return (0);
+
+	//printf("ft_putnbr(2147483647) ");
+	ft_putnbr(2147483647);
+	ft_putchar('\n');
+
+	//printf("ft_putnbr(-2147483648) ");
+	//ft_putnbr(-2147483648);
+	ft_putchar('\n');
 }

@@ -45,7 +45,6 @@ SRCS = main.c\
 	   test_lstmap.c \
 
 LIBSRCS = ../libft/ft_memset.c \
-		  ../libft/ft_lstpop_left.c \
 		  ../libft/ft_lstadd_back.c \
 		  ../libft/ft_lstpop.c \
 		  ../libft/ft_lstget.c \

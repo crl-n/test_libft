@@ -1,39 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_memcpy.c                                      :+:      :+:    :+:   */
+/*   test_lstadd_back.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/03 09:46:58 by cnysten           #+#    #+#             */
-/*   Updated: 2021/11/08 14:43:07 by cnysten          ###   ########.fr       */
+/*   Created: 2021/11/23 17:15:34 by cnysten           #+#    #+#             */
+/*   Updated: 2021/11/23 17:38:48 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "test_libft.h"
 
-
-static void	test_adr(void *expected, void *actual, char *test_name)
+void	test_lstadd_back(void)
 {
+	t_list	*lst = NULL;
+	t_list	*new = ft_lstnew("Moi.", 5);
+	t_list	*new2 = ft_lstnew("Hei.", 5);
+	size_t	passed = 0;
+	size_t target = 2;
 
-}
+	print_function("FT_LSTADD_BACK");
 
-static void	test_mem(void *expected, void *actual, char *test_name)
-{
-	if (memcmp(expected, actual) != 0)
-		print_failed(test_name);
-	else
-		print_passed(test_name);
-}
+	// Test adding to empty list
+	ft_lstadd_back(&lst, new);
+	test_lst(new, lst, &passed);
 
-void	test_memcpy(void)
-{
-	printf_ft("FT_MEMCPY");
+	// Test adding to non-empty list
+	ft_lstadd_back(&lst, new2);
+	test_lst(new2, lst->next, &passed);
 
-	char str[] = "Hello world.";
-
-	printf("%s\n", str);
-	memcpy(str + 2, str, 3);
-	printf("%s\n", str);
-	return (0);
+	evaluate(target, passed);
 }

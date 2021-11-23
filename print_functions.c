@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_libft.c                                       :+:      :+:    :+:   */
+/*   print_functions.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/07 18:05:28 by cnysten           #+#    #+#             */
-/*   Updated: 2021/11/08 11:06:29 by cnysten          ###   ########.fr       */
+/*   Created: 2021/11/10 14:42:54 by cnysten           #+#    #+#             */
+/*   Updated: 2021/11/23 15:38:20 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "test_libft.h"
-#include <stdio.h>
 
 void	print_banner(void)
 {
@@ -27,28 +25,54 @@ void	print_banner(void)
 
 void	print_ft(char *ft_name)
 {
-	printf("\033[0;35m");
+	printf("\x1B[35m");
 	printf("%s\n", ft_name);
 	printf("\033[0;37m");
 }
 
+void	print_function(char *ft_name)
+{
+	printf("%s\t" RESET, ft_name);
+}
+
 void	print_failed(char *test_name)
 {
-	printf("\033[0;31m");
-	printf(" • %s failed\n", test_name);
+	printf(" • %s \033[0;31m[𝙭]\n", test_name);
 	printf("\033[0;37m");
+}
+
+void	print_fail(void)
+{
+	printf(RED "✦ " RESET);
 }
 
 void	print_passed(char *test_name)
 {
-	printf("\033[0;32m");
-	printf(" • %s passed\n", test_name);
+	printf(" • %s \033[0;32m[✓]\n", test_name);
 	printf("\033[0;37m");
 }
 
-int	main(void)
+void	print_pass(void)
 {
-	print_banner();
-	test_itoa();
-	return (0);
+	printf(GRN "• " RESET);
+}
+
+void	print_arr(int *arr, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < n)
+		printf("%d, ", arr[i++]);
+	printf("\n");
+}
+
+void	print_str_arr(char **arr)
+{
+	while (*arr != NULL)
+	{
+		printf("\"%s\", ", *arr);
+		arr++;
+	}
+	printf("\n");
 }

@@ -6,24 +6,33 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 17:19:47 by cnysten           #+#    #+#             */
-/*   Updated: 2021/11/08 14:27:15 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/11/18 10:48:27 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "test_libft.h"
 
-static void	test(char *expected, char *actual, char *test_name)
-{
-	if (strcmp(expected, actual) == 0)
-		print_failed(test_name);
-	else
-		print_passed(test_name);
-}	
-
 void	test_itoa(void)
 {
+	char	*s1 = ft_itoa(123);
+	char	*s2 = ft_itoa(-123);
+	char	*s3 = ft_itoa(0);
+	char	*s4 = ft_itoa(2147483647);
+	char	*s5 = ft_itoa(-2147483648);
 	print_ft("FT_ITOA");
-	char	*itoa = ft_itoa(123);
-	test("123", itoa, "123");
-	free(itoa);
+
+	test_str("123", s1, "123");
+	test_str("-123", s2, "-123");
+	//printf("ft_itoa(-123): %s\n", ft_itoa(-123));
+	test_str("0", s3, "0");
+	test_str("2147483647", s4, "MAX INT");
+	test_str("-2147483648", s5, "MIN INT");
+	//printf("ft_itoa(-2147483648): %s\n", ft_itoa(-2147483648));
+	
+	free(s1);
+	free(s2);
+	free(s3);
+	free(s4);
+	free(s5);
+
 }

@@ -1,39 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_memcpy.c                                      :+:      :+:    :+:   */
+/*   test_lstdel.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/03 09:46:58 by cnysten           #+#    #+#             */
-/*   Updated: 2021/11/08 14:43:07 by cnysten          ###   ########.fr       */
+/*   Created: 2021/11/19 15:49:53 by cnysten           #+#    #+#             */
+/*   Updated: 2021/11/19 16:07:38 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "test_libft.h"
 
-
-static void	test_adr(void *expected, void *actual, char *test_name)
+static void	del(void *ptr, size_t size)
 {
-
+	(void) size;
+	free(ptr);
 }
 
-static void	test_mem(void *expected, void *actual, char *test_name)
+void	test_lstdel(void)
 {
-	if (memcmp(expected, actual) != 0)
-		print_failed(test_name);
-	else
-		print_passed(test_name);
-}
+	print_ft("FT_LSTDEL");
 
-void	test_memcpy(void)
-{
-	printf_ft("FT_MEMCPY");
-
-	char str[] = "Hello world.";
-
-	printf("%s\n", str);
-	memcpy(str + 2, str, 3);
-	printf("%s\n", str);
-	return (0);
+	t_list	*lst = ft_lstnew("Delete this whole thing", 23);
+	t_list	*node1 = ft_lstnew("Delete this whole thing", 23);
+	t_list	*node2 = ft_lstnew("Delete this whole thing", 23);
+	lst->next = node1;
+	node1->next = node2;
+	ft_lstdel(&lst, del);
 }

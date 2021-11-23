@@ -1,39 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_memcpy.c                                      :+:      :+:    :+:   */
+/*   test_strcpy.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/03 09:46:58 by cnysten           #+#    #+#             */
-/*   Updated: 2021/11/08 14:43:07 by cnysten          ###   ########.fr       */
+/*   Created: 2021/11/17 19:04:13 by cnysten           #+#    #+#             */
+/*   Updated: 2021/11/18 11:09:21 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "test_libft.h"
 
-
-static void	test_adr(void *expected, void *actual, char *test_name)
+void	test_strncpy(void)
 {
+	print_ft("FT_STRNCPY");
 
-}
+	char	*d1;
+	char	*d2;
 
-static void	test_mem(void *expected, void *actual, char *test_name)
-{
-	if (memcmp(expected, actual) != 0)
-		print_failed(test_name);
-	else
-		print_passed(test_name);
-}
-
-void	test_memcpy(void)
-{
-	printf_ft("FT_MEMCPY");
-
-	char str[] = "Hello world.";
-
-	printf("%s\n", str);
-	memcpy(str + 2, str, 3);
-	printf("%s\n", str);
-	return (0);
+	d1 = (char *) malloc(4 * sizeof (char));
+	d2 = (char *) malloc(4 * sizeof (char));
+	strncpy(d1, "abc", 4);
+	ft_strncpy(d2, "abc", 4);
+	test_str(d1, d2, "Comparison to strncpy");
+	free(d1);
+	free(d2);
 }
