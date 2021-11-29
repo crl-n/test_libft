@@ -6,13 +6,18 @@
 #    By: cnysten <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/05 12:54:18 by cnysten           #+#    #+#              #
-#    Updated: 2021/11/23 15:08:22 by cnysten          ###   ########.fr        #
+#    Updated: 2021/11/25 11:10:48 by cnysten          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = test_libft
 
 SRCS = main.c\
+	   test_isascii.c \
+	   test_isprint.c \
+	   test_isalnum.c \
+	   test_isdigit.c \
+	   test_isalpha.c \
 	   test_lstpop_left.c \
 	   test_lstadd_back.c \
 	   other_functions.c \
@@ -45,6 +50,11 @@ SRCS = main.c\
 	   test_lstmap.c \
 
 LIBSRCS = ../libft/ft_memset.c \
+		  ../libft/ft_isascii.c \
+		  ../libft/ft_isprint.c \
+		  ../libft/ft_isalnum.c \
+		  ../libft/ft_isdigit.c \
+		  ../libft/ft_isalpha.c \
 		  ../libft/ft_lstpop_left.c \
 		  ../libft/ft_lstadd_back.c \
 		  ../libft/ft_lstpop.c \

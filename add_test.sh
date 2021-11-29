@@ -34,8 +34,8 @@ function adt() {
 
 void	test_'$1'(void)
 {
-	size_t	*passed;
-	size_t	*target;
+	size_t	passed = 0;
+	size_t	target = 0;
 
 	print_function("'$UPPER'");
 

@@ -5,24 +5,39 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 11:31:54 by cnysten           #+#    #+#             */
-/*   Updated: 2021/11/05 15:24:24 by cnysten          ###   ########.fr       */
+/*   Created: 2021/11/24 16:08:27 by cnysten           #+#    #+#             */
+/*   Updated: 2021/11/26 09:32:00 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
-#include <ctype.h>
+#include "test_libft.h"
 
-int	main(void)
+void	test_isalpha(void)
 {
-	char	c;
+	size_t	passed = 0;
+	size_t	target = 1;
+	int		c = 0;
+	int		fail = 0;
 
-	c = (char) 0;
-	while (c <= '~')
+	print_function("FT_ISALPHA");
+
+	while (c < 128)
 	{
-		printf("char no. %d -> ft: %d, org: %d\n", (int) c, ft_isalpha(c), isalpha(c));
+		if (ft_isalpha(c) != isalpha(c))
+		{
+			fail = 1;
+			break ;
+		}
 		c++;
 	}
-	return (0);
+	if (fail)
+		print_fail();
+	else
+	{
+		print_pass();
+		passed++;
+	}
+	evaluate(target, passed);
+	if (fail)
+		printf("\tYour ft_isalpha failed with input: %c\n", c);
 }

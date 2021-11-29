@@ -6,6 +6,7 @@
 # include <string.h>
 # include <stdlib.h>
 # include <time.h>
+# include <ctype.h>
 # include "libft.h"
 
 # define INT_MIN "-2147483648"
@@ -33,6 +34,13 @@ void	test_strstr(void);
 void	test_strnstr(void);
 void	test_strcmp(void);
 void	test_atoi(void);
+void	test_isalpha(void);
+void	test_isdigit(void);
+void	test_isalnum(void);
+void	test_isascii(void);
+void	test_isprint(void);
+void	test_tolower(void);
+void	test_toupper(void);
 
 // Second part
 void	test_strnew(void);
@@ -64,7 +72,9 @@ void	test_int(int expected, int actual, char *test_name);
 void	test_size_t(size_t expected, size_t actual, char *test_name);
 void	test_size(size_t expected, size_t actual, size_t *passed);
 void	test_str(char *expected, char *actual, char *test_name);
+int		test_string(char *expected, char *actual, size_t *passed);
 void	test_mem(void *expected, void *actual, char *test_name);
+int		test_memory(void *expected, void *actual, size_t *passed);
 void	test_adr(void *expected, void *actual, char *test_name);
 void	test_diff_adr(void *expected, void *actual, char *test_name);
 void	test_str_arr(char **expected, char **actual, size_t len, char *test_name);

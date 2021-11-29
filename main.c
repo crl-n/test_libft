@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 18:05:28 by cnysten           #+#    #+#             */
-/*   Updated: 2021/11/23 17:39:44 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/11/26 09:19:18 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,13 @@ int	main(void)
 	test_strcmp();
 	// test_strncmp();
 	test_atoi();
-	// test_isalpha();
-	// test_isdigit();
-	// test_isalnum();
-	// test_ascii();
-	// test_isprint();
-	// test_toupper();
-	// test_tolower();
+	test_isalpha();
+	test_isdigit();
+	test_isalnum();
+	test_isascii();
+	test_isprint();
+	//test_toupper();
+	//test_tolower();
 
 	// Second part
 	// test_memalloc();

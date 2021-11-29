@@ -6,11 +6,13 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 14:36:32 by cnysten           #+#    #+#             */
-/*   Updated: 2021/11/23 15:41:41 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/11/26 09:45:31 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "test_libft.h"
+
+// New test funcs
 
 void	test_lst(t_list *expected, t_list *actual, size_t *passed)
 {
@@ -33,6 +35,38 @@ void	test_size(size_t expected, size_t actual, size_t *passed)
 	else
 		print_fail();
 }
+
+int		test_memory(void *expected, void *actual, size_t *passed)
+{
+	if (memcmp(expected, actual, (size_t)(sizeof (actual))) != 0)
+	{
+		(*passed)++;
+		print_fail();
+		return (1);
+	}
+	else
+	{
+		print_pass();
+		return (0);
+	}
+}
+
+int		test_string(char *expected, char *actual, size_t *passed)
+{
+	if (strcmp(expected, actual) == 0)
+	{
+		(*passed)++;
+		print_pass();
+		return (1);
+	}
+	else
+	{
+		print_fail();
+		return (0);
+	}
+}
+
+// Old test funcs
 
 void	test_int(int expected, int actual, char *test_name)
 {
