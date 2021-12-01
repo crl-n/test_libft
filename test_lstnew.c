@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 13:36:53 by cnysten           #+#    #+#             */
-/*   Updated: 2021/11/18 21:47:50 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/01 17:07:22 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	test_lstnew(void)
 	t_list	*lst2 = ft_lstnew(content2, 1);
 	t_list	*lst3 = ft_lstnew(NULL, 0);
 	
-	print_ft("FT_LSTNEW");
+	print_function("FT_LSTNEW");
 	test_str(content, lst->content, "Same content");
 	test_diff_adr(content, lst->content, "Different address");
 	test_str(content2, lst2->content, "Empty string.");

@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 17:19:47 by cnysten           #+#    #+#             */
-/*   Updated: 2021/11/18 10:48:27 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/01 17:07:14 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	test_itoa(void)
 	char	*s3 = ft_itoa(0);
 	char	*s4 = ft_itoa(2147483647);
 	char	*s5 = ft_itoa(-2147483648);
-	print_ft("FT_ITOA");
+	print_function("FT_ITOA");
 
 	test_str("123", s1, "123");
 	test_str("-123", s2, "-123");

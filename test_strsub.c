@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 15:41:12 by cnysten           #+#    #+#             */
-/*   Updated: 2021/11/18 11:28:36 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/01 17:07:56 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	test_strsub(void)
 {
-	print_ft("FT_STRSUB");
+	print_function("FT_STRSUB");
 	
 	char	*s1 = ft_strsub("abcdef", 0, 6);
 	char	*s2 = ft_strsub("abcdef", 3, 6);

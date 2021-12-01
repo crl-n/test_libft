@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 16:41:33 by cnysten           #+#    #+#             */
-/*   Updated: 2021/12/01 16:59:07 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/01 18:13:36 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	test_isalpha(void)
 	int		c = 0;
 	int		fail = 0;
 
-	test->target = 1;
+	*(test->target) = 1;
 	print_function("FT_ISALPHA");
 
 	while (c < 128)

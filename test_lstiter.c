@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 13:18:25 by cnysten           #+#    #+#             */
-/*   Updated: 2021/11/22 14:08:14 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/01 17:07:18 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	test_lstiter(void)
 {
-	print_ft("FT_LSTITER");
+	print_function("FT_LSTITER");
 }

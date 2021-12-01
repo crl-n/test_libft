@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 10:33:28 by cnysten           #+#    #+#             */
-/*   Updated: 2021/11/17 15:57:31 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/01 17:45:13 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	test_atoi(void)
 {
+	t_test	*test = new_test();
 	char	str1[] = " 123";
 	char	str2[] = " +123";
 	char	str3[] = " -123";
@@ -29,21 +30,22 @@ void	test_atoi(void)
 	char	str13[] = "-2147483649";
 	char	str14[] = "2147483648";
 
-	print_ft("FT_ATOI");
-	test_int(atoi(str1), ft_atoi(str1), "\" 123\"");
-	test_int(atoi(str2), ft_atoi(str2), "\" +123\"");
-	test_int(atoi(str3), ft_atoi(str3), "\" -123\"");
-	test_int(atoi(str4), ft_atoi(str4), "\" -+123\"");
-	test_int(atoi(str5), ft_atoi(str5), "\" + 123\"");
-	test_int(atoi(str6), ft_atoi(str6), "\" - 123\"");
-	test_int(atoi(str7), ft_atoi(str7), "\" +-123\"");
-	test_int(atoi(str8), ft_atoi(str8), "\" --123\"");
-	test_int(atoi(str9), ft_atoi(str9), "\" 123 \"");
-	test_int(atoi(str10), ft_atoi(str10), "\"\\t\\v\\n\\r\\f123\"");
-	test_int(atoi(str11), ft_atoi(str11), "INT_MIN");
-	test_int(atoi(str12), ft_atoi(str12), "INT_MAX");
-	test_int(atoi(str13), ft_atoi(str13), "INT_MIN - 1");
-	test_int(atoi(str14), ft_atoi(str14), "INT_MAX + 1");
+	print_function("FT_ATOI");
+
+	test_integer(atoi(str1), ft_atoi(str1), test);
+	test_integer(atoi(str2), ft_atoi(str2), test);
+	test_integer(atoi(str3), ft_atoi(str3), test);
+	test_integer(atoi(str4), ft_atoi(str4), test);
+	test_integer(atoi(str5), ft_atoi(str5), test);
+	test_integer(atoi(str6), ft_atoi(str6), test);
+	test_integer(atoi(str7), ft_atoi(str7), test);
+	test_integer(atoi(str8), ft_atoi(str8), test);
+	test_integer(atoi(str9), ft_atoi(str9), test);
+	test_integer(atoi(str10), ft_atoi(str10), test);
+	test_integer(atoi(str11), ft_atoi(str11), test);
+	test_integer(atoi(str12), ft_atoi(str12), test);
+	test_integer(atoi(str13), ft_atoi(str13), test);
+	test_integer(atoi(str14), ft_atoi(str14), test);
 	// test_int(atoi(NULL), ft_atoi(NULL), "NULL");
 	// ft_atoi(NULL);
 	/*
@@ -60,6 +62,9 @@ void	test_atoi(void)
 	printf("org: -2147483648\tatoi: %d\tft_atoi: %d\n", atoi(str11), ft_atoi(str11));
 	printf("org: 2147483647\tatoi: %d\tft_atoi: %d\n", atoi(str12), ft_atoi(str12));
 	*/
-	printf("org: -2147483649\tatoi: %d\tft_atoi: %d\n", atoi(str13), ft_atoi(str13));
-	printf("org: 2147483648\tatoi: %d\tft_atoi: %d\n", atoi(str14), ft_atoi(str14));
+	//printf("org: -2147483649\tatoi: %d\tft_atoi: %d\n", atoi(str13), ft_atoi(str13));
+	//printf("org: 2147483648\tatoi: %d\tft_atoi: %d\n", atoi(str14), ft_atoi(str14));
+
+	evaluate(test);
+	
 }

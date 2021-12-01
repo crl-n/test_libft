@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 16:42:28 by cnysten           #+#    #+#             */
-/*   Updated: 2021/12/01 16:59:32 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/01 18:13:36 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	test_isdigit(void)
 	int		c = 0;
 	int		fail = 0;
 
-	test->target = 1;
+	*(test->target) = 1;
 	print_function("FT_ISDIGIT");
 
 	while (c < 256)

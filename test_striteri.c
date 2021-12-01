@@ -2,6 +2,6 @@
 
 void	test_striteri(void)
 {
-	print_ft("FT_STRITERI");
+	print_function("FT_STRITERI");
 
 }

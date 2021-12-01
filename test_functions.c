@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 14:36:32 by cnysten           #+#    #+#             */
-/*   Updated: 2021/12/01 15:30:58 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/01 18:03:18 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 // New test funcs
 
-void	test_lst(t_list *expected, t_list *actual, t_test * test)
+void	test_lst(t_list *expected, t_list *actual, t_test *test)
 {
 	(test->target)++;
 	if (expected == actual)
@@ -26,7 +26,7 @@ void	test_lst(t_list *expected, t_list *actual, t_test * test)
 		print_fail();
 }
 
-void	test_size(size_t expected, size_t actual, t_test * test)
+void	test_size(size_t expected, size_t actual, t_test *test)
 {
 	(test->target)++;
 	if (expected == actual)
@@ -38,7 +38,7 @@ void	test_size(size_t expected, size_t actual, t_test * test)
 		print_fail();
 }
 
-int		test_memory(void *expected, void *actual, t_test * test)
+int		test_memory(void *expected, void *actual, t_test *test)
 {
 	(test->target)++;
 	if (memcmp(expected, actual, (size_t)(sizeof (actual))) == 0)
@@ -54,7 +54,7 @@ int		test_memory(void *expected, void *actual, t_test * test)
 	}
 }
 
-int		test_string(char *expected, char *actual, t_test * test)
+int		test_string(char *expected, char *actual, t_test *test)
 {
 	(test->target)++;
 	if (strcmp(expected, actual) == 0)
@@ -71,6 +71,22 @@ int		test_string(char *expected, char *actual, t_test * test)
 }
 
 int		test_address(void *expected, void *actual, t_test * test)
+{
+	(test->target)++;
+	if (expected == actual)
+	{
+		test->passed++;
+		print_pass();
+		return (1);
+	}
+	else
+	{
+		print_fail();
+		return (0);
+	}
+}
+
+int		test_integer(int expected, int actual, t_test * test)
 {
 	(test->target)++;
 	if (expected == actual)

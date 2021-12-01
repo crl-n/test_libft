@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 14:12:39 by cnysten           #+#    #+#             */
-/*   Updated: 2021/11/22 14:13:25 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/01 17:07:34 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	test_strclr(void)
 {
-	print_ft("FT_STRCLR");
+	print_function("FT_STRCLR");
 
 }
 

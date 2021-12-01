@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 08:49:49 by cnysten           #+#    #+#             */
-/*   Updated: 2021/11/18 10:45:17 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/01 17:07:32 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	test_putnbr(void)
 {
-	print_ft("FT_PUTNBR");
+	print_function("FT_PUTNBR");
 
 	//printf("ft_putnbr(-42) ");
 	ft_putnbr(-42);

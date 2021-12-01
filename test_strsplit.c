@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 17:30:50 by cnysten           #+#    #+#             */
-/*   Updated: 2021/11/22 14:07:49 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/01 17:07:52 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	test_strsplit(void)
 	char	**r2 = ft_strsplit("split  ||it|baby|split|||||||it|", '|');
 	char	*correct2[] = {"split  ", "it", "baby", "split", "it"};
 
-	print_ft("FT_STRSPLIT");
+	print_function("FT_STRSPLIT");
 
 	test_str_arr(correct1, r1, 3, "Asterisks as delimiter");
 	print_str_arr(r1);

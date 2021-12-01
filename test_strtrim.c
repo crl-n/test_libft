@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 18:29:59 by cnysten           #+#    #+#             */
-/*   Updated: 2021/11/18 10:31:39 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/01 17:07:57 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	test_strtrim(void)
 {
-	print_ft("FT_STRTRIM");
+	print_function("FT_STRTRIM");
 	
 	char	*r1 = ft_strtrim(" Hello. ");
 	char	*r2 = ft_strtrim("");

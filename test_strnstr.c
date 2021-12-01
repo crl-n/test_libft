@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 20:12:00 by cnysten           #+#    #+#             */
-/*   Updated: 2021/11/16 21:55:51 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/01 17:07:50 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ static void	test5(void)
 
 void	test_strnstr(void)
 {
-	print_ft("FT_STRNSTR");
+	print_function("FT_STRNSTR");
 	test1();
 	test2();
 	test3();

@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 16:38:20 by cnysten           #+#    #+#             */
-/*   Updated: 2021/11/17 16:59:21 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/01 17:45:15 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,22 @@
 
 void	test_strcmp(void)
 {
-	print_ft("FT_STRCMP");
+	t_test	*test = new_test();
+	print_function("FT_STRCMP");
 
-	test_int(strcmp("42", "42"), ft_strcmp("42", "42"), "Test same string (\"42\")");
-	test_int(strcmp("", ""), ft_strcmp("", ""), "Test same string (\"\")");
-	test_int(strcmp("aab", "aax"), ft_strcmp("aab", "aax"), "aab and aax");
+	test_integer(strcmp("42", "42"), ft_strcmp("42", "42"), test);
+	test_integer(strcmp("", ""), ft_strcmp("", ""), test);
+	test_integer(strcmp("aab", "aax"), ft_strcmp("aab", "aax"), test);
 	// printf("strcmp: %d, ft_strcmp: %d\n", strcmp("aab", "aax"), ft_strcmp("aab", "aax"));
-	test_int(strcmp("AAA", ""), ft_strcmp("AAA", ""), "AAA vs. empty string");
+	test_integer(strcmp("AAA", ""), ft_strcmp("AAA", ""), test);
 	// printf("strcmp: %d, ft_strcmp: %d\n", strcmp("AAA", ""), ft_strcmp("AAA", ""));
-	test_int(strcmp("~~~", ""), ft_strcmp("~~~", ""), "~~~ vs. empty string");
+	test_integer(strcmp("~~~", ""), ft_strcmp("~~~", ""), test);
 	// printf("strcmp: %d, ft_strcmp: %d\n", strcmp("~~~", ""), ft_strcmp("~~~", ""));
-	test_int(strcmp(" ", "~"), ft_strcmp(" ", "~"), "Space and tilde");
+	test_integer(strcmp(" ", "~"), ft_strcmp(" ", "~"), test);
 	// printf("strcmp: %d, ft_strcmp: %d\n", strcmp(" ", "~"), ft_strcmp(" ", "~"));
-	test_int(strcmp("[", "v"), ft_strcmp("[", "v"), "[ and v");
+	test_integer(strcmp("[", "v"), ft_strcmp("[", "v"), test);
 	// printf("strcmp: %d, ft_strcmp: %d\n", strcmp("[", "v"), ft_strcmp("[", "v"));
+	
+	evaluate(test);
+	
 }

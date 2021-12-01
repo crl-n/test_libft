@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 13:48:08 by cnysten           #+#    #+#             */
-/*   Updated: 2021/11/19 15:49:41 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/01 17:07:17 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static void	del_arr(void *ptr, size_t size)
 */
 void	test_lstdelone(void)
 {
-	print_ft("FT_LSTDELONE");
+	print_function("FT_LSTDELONE");
 
 	//char	arr[3][4] = {"abc", "ijk", "xyz"};
 	t_list	*lst1 = ft_lstnew("Delete this", 12);
