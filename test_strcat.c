@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 16:24:30 by cnysten           #+#    #+#             */
-/*   Updated: 2021/12/01 17:58:39 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/01 21:24:08 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	test_strcat(void)
 
 	print_function("FT_STRCAT");
 
-	char	s1[4] = "abc";
+	char	s1[7] = "abc";
 	char	s2[4] = "def";
 	test_string("abcdef", ft_strcat(s1, s2), test);
 	evaluate(test);
-	
+	free(test);
 }

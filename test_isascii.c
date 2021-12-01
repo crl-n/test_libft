@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 09:15:35 by cnysten           #+#    #+#             */
-/*   Updated: 2021/12/01 18:11:22 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/01 22:07:37 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	test_isascii(void)
 	int		c = 0;
 	int		fail = 0;
 
-	*(test->target) = 1;
+	test->target = 1;
 	print_function("FT_ISASCII");
 
 	while (c < 256)
@@ -40,4 +40,5 @@ void	test_isascii(void)
 	evaluate(test);
 	if (fail)
 		printf("\tYour ft_isascii failed with input: %c\n", c);
+	free(test);
 }

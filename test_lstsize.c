@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 21:17:59 by cnysten           #+#    #+#             */
-/*   Updated: 2021/12/01 17:00:28 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/01 22:30:27 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,6 @@ void	test_lstsize(void)
 
 	// Evaluate end result
 	evaluate(test);
+	free(test);
+	free_list(&lst);
 }

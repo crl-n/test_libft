@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 09:16:20 by cnysten           #+#    #+#             */
-/*   Updated: 2021/12/01 18:13:36 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/01 22:07:21 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	test_isalnum(void)
 	int		c = 0;
 	int		fail = 0;
 
-	*(test->target) = 1;
+	test->target = 1;
 	print_function("FT_ISALNUM");
 
 	while (c < 256)
@@ -38,4 +38,5 @@ void	test_isalnum(void)
 		(test->passed)++;
 	}
 	evaluate(test);
+	free(test);
 }

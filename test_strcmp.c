@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 16:38:20 by cnysten           #+#    #+#             */
-/*   Updated: 2021/12/01 17:45:15 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/01 22:06:13 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,5 @@ void	test_strcmp(void)
 	// printf("strcmp: %d, ft_strcmp: %d\n", strcmp("[", "v"), ft_strcmp("[", "v"));
 	
 	evaluate(test);
-	
+	free(test);
 }

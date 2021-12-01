@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 16:21:22 by cnysten           #+#    #+#             */
-/*   Updated: 2021/12/01 17:45:14 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/01 21:09:57 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,5 @@ void	test_memset(void)
 	ft_memset((void *) 0, 0, 0);
 
 	evaluate(test);
-	
+	free(test);
 }

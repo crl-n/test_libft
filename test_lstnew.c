@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 13:36:53 by cnysten           #+#    #+#             */
-/*   Updated: 2021/12/01 17:07:22 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/01 22:29:44 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ void	test_lstnew(void)
 	test_str(content2, lst2->content, "Empty string.");
 	test_adr(NULL, lst3->content, "Null content");
 	test_size_t(0, lst3->content_size, "Null content size");
+	free(lst->content);
+	free(lst2->content);
+	free(lst3->content);
 	free(lst);
 	free(lst2);
 	free(lst3);

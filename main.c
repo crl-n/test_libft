@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 18:05:28 by cnysten           #+#    #+#             */
-/*   Updated: 2021/11/26 09:19:18 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/01 21:50:12 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(void)
 	test_strncpy();
 	test_strcat();
 	test_strncat();
-	// test_strlcat();
+	//test_strlcat();
 	// test_strchr();
 	// test_strrchr();
 	test_strstr();

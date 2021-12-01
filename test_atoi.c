@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 10:33:28 by cnysten           #+#    #+#             */
-/*   Updated: 2021/12/01 17:45:13 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/01 22:06:30 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,5 @@ void	test_atoi(void)
 	//printf("org: 2147483648\tatoi: %d\tft_atoi: %d\n", atoi(str14), ft_atoi(str14));
 
 	evaluate(test);
-	
+	free(test);
 }

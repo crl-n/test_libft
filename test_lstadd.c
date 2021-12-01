@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 13:40:11 by cnysten           #+#    #+#             */
-/*   Updated: 2021/12/01 17:01:16 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/01 22:09:23 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,11 @@ void	test_lstadd(void)
 	test_string("21", lst->content, test);
 	
 	evaluate(test);
+	free(test);
+	free(lst->next->content);
+	free(lst->content);
+	free(lst->next);
+	free(lst);
 
 	// Todo null crash test
 }

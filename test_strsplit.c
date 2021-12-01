@@ -6,12 +6,12 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 17:30:50 by cnysten           #+#    #+#             */
-/*   Updated: 2021/12/01 17:07:52 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/01 22:20:48 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "test_libft.h"
-/*
+
 static char**	free_str_arr(char **arr, size_t len)
 {
 	for (size_t i = 0; i < len; i++)
@@ -21,7 +21,7 @@ static char**	free_str_arr(char **arr, size_t len)
 	free(arr);
 	return (NULL);
 }
-*/
+
 void	test_strsplit(void)
 {
 	char	**r1 = ft_strsplit("*hello*fellow***students*", '*');
@@ -33,8 +33,8 @@ void	test_strsplit(void)
 
 	test_str_arr(correct1, r1, 3, "Asterisks as delimiter");
 	print_str_arr(r1);
-	//r1 = free_str_arr(r1, 3);
+	r1 = free_str_arr(r1, 3);
 	test_str_arr(correct2, r2, 5, "Bar as delimiter");
 	print_str_arr(r2);
-	//r2 = free_str_arr(r2, 5);
+	r2 = free_str_arr(r2, 5);
 }
