@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 09:18:32 by cnysten           #+#    #+#             */
-/*   Updated: 2021/11/26 09:18:55 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/01 16:59:40 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	test_isprint(void)
 {
-	size_t	passed = 0;
-	size_t	target = 1;
+	t_test	*test = new_test();
 	int		c = 0;
 	int		fail = 0;
 
+	test->target = 1;
 	print_function("FT_ISPRINT");
 
 	while (c < 256)
@@ -35,7 +35,7 @@ void	test_isprint(void)
 	else
 	{
 		print_pass();
-		passed++;
+		(test->passed)++;
 	}
-	evaluate(target, passed);
+	evaluate(test);
 }

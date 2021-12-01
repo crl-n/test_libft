@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 14:31:36 by cnysten           #+#    #+#             */
-/*   Updated: 2021/11/29 13:08:48 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/01 16:37:36 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 void	test_lstget(void)
 {
-	size_t	passed = 0;
-	size_t	target = 3;
+	t_test	*test = new_test();
 	t_list	*lst = NULL;
 	int		i1 = 42;
 	int		i2 = 21;
@@ -27,14 +26,14 @@ void	test_lstget(void)
 	//	passed++;
 
 	// Test empty list
-	test_lst(NULL, ft_lstget(lst, 1), &passed);
+	test_lst(NULL, ft_lstget(lst, 1), test);
 
 	lst = ft_lstnew(&i1, sizeof (int));
 	ft_lstadd(&lst, ft_lstnew(&i2, sizeof (int)));
 	ft_lstadd(&lst, ft_lstnew(&i3, sizeof (int)));
 
-	test_lst(lst->next, ft_lstget(lst, 1), &passed);
-	test_lst(lst->next->next, ft_lstget(lst, 2), &passed);
+	test_lst(lst->next, ft_lstget(lst, 1), test);
+	test_lst(lst->next->next, ft_lstget(lst, 2), test);
 	/*
 	if (ft_lstget(lst, 0) == lst)
 		passed++;
@@ -48,5 +47,5 @@ void	test_lstget(void)
 	if (ft_lstget(lst, 5) == NULL)
 		passed++;
 	*/
-	evaluate(target, passed);
+	evaluate(test);
 }

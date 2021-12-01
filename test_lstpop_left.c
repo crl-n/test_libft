@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 17:46:46 by cnysten           #+#    #+#             */
-/*   Updated: 2021/11/23 19:04:58 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/01 16:37:40 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	test_lstpop_left(void)
 {
-	size_t	passed = 0;
-	size_t	target = 3;
+	t_test	*test = new_test();
+
 	t_list	*lst = NULL;
 	t_list	*new1 = ft_lstnew("Moi.", 5);
 	t_list	*new2 = ft_lstnew("Hei.", 5);
@@ -23,13 +23,13 @@ void	test_lstpop_left(void)
 	print_function("FT_LSTPOP_LEFT");
 
 	// Test on empty list
-	test_lst(NULL, ft_lstpop_left(&lst), &passed);
+	test_lst(NULL, ft_lstpop_left(&lst), test);
 
 	// Test on non-empty list
 	ft_lstadd(&lst, new1);
 	ft_lstadd(&lst, new2);
-	test_lst(new2, ft_lstpop_left(&lst), &passed);
-	test_lst(new1, ft_lstpop_left(&lst), &passed);
+	test_lst(new2, ft_lstpop_left(&lst), test);
+	test_lst(new1, ft_lstpop_left(&lst), test);
 
-	evaluate(target, passed);
+	evaluate(test);
 }

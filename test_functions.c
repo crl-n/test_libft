@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 14:36:32 by cnysten           #+#    #+#             */
-/*   Updated: 2021/11/26 09:45:31 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/01 15:30:58 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,48 +14,68 @@
 
 // New test funcs
 
-void	test_lst(t_list *expected, t_list *actual, size_t *passed)
+void	test_lst(t_list *expected, t_list *actual, t_test * test)
 {
+	(test->target)++;
 	if (expected == actual)
 	{
-		(*passed)++;
+		test->passed++;
 		print_pass();
 	}
 	else
 		print_fail();
 }
 
-void	test_size(size_t expected, size_t actual, size_t *passed)
+void	test_size(size_t expected, size_t actual, t_test * test)
 {
+	(test->target)++;
 	if (expected == actual)
 	{
-		(*passed)++;
+		test->passed++;
 		print_pass();
 	}
 	else
 		print_fail();
 }
 
-int		test_memory(void *expected, void *actual, size_t *passed)
+int		test_memory(void *expected, void *actual, t_test * test)
 {
-	if (memcmp(expected, actual, (size_t)(sizeof (actual))) != 0)
+	(test->target)++;
+	if (memcmp(expected, actual, (size_t)(sizeof (actual))) == 0)
 	{
-		(*passed)++;
-		print_fail();
+		test->passed++;
+		print_pass();
 		return (1);
 	}
 	else
 	{
-		print_pass();
+		print_fail();
 		return (0);
 	}
 }
 
-int		test_string(char *expected, char *actual, size_t *passed)
+int		test_string(char *expected, char *actual, t_test * test)
 {
+	(test->target)++;
 	if (strcmp(expected, actual) == 0)
 	{
-		(*passed)++;
+		test->passed++;
+		print_pass();
+		return (1);
+	}
+	else
+	{
+		print_fail();
+		return (0);
+	}
+}
+
+int		test_address(void *expected, void *actual, t_test * test)
+{
+	(test->target)++;
+	if (expected == actual)
+	{
+		test->passed++;
 		print_pass();
 		return (1);
 	}
