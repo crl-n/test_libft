@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 15:52:02 by cnysten           #+#    #+#             */
-/*   Updated: 2021/12/01 22:37:34 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/01 22:44:22 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	test_lstpop(void)
 {
 	t_test	*test = new_test();
 	t_list	*lst = NULL;
-	int		i1 = 1;
 
 	print_function("FT_LSTPOP");
 
@@ -24,13 +23,13 @@ void	test_lstpop(void)
 	test_lst(NULL, ft_lstpop(&lst), test);
 
 	// Add node, pop and test return and if empty
-	lst = ft_lstnew(&i1, sizeof (int));
+	lst = ft_lstnew("a string", 9);
 	t_list *temp = lst;
 	test_lst(temp, ft_lstpop(&lst), test);
 	test_lst(NULL, lst, test);
 	
 	evaluate(test);
 	free(test);
-	free(lst->content);
-	free(lst);
+	free(temp->content);
+	free(temp);
 }
