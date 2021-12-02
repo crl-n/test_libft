@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 14:43:37 by cnysten           #+#    #+#             */
-/*   Updated: 2021/12/01 22:29:11 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/01 23:11:55 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ t_test	*new_test(void)
 void	evaluate(t_test *test)
 {
 	if (test->target < 4)
-		printf("\t");
+		printf("\t\t");
 	if (test->passed == test->target)
 		puts("\tPassed!");
 	else

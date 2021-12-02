@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 14:42:54 by cnysten           #+#    #+#             */
-/*   Updated: 2021/12/01 21:27:57 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/02 11:37:00 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,30 @@
 
 void	print_banner(void)
 {
-	printf("\033[0;34m");
-	printf("************************************************************\n\n");
-	printf("\033[0;37m");
+	printf(BLU "************************************************************\n\n" RESET);
 	printf("\t\t\tLIBFT TESTS\n\n");
-	printf("\033[0;34m");
-	printf("************************************************************\n\n");
-	printf("\033[0;37m");
+	printf(BLU "************************************************************\n\n" RESET);
+}
+
+void	print_part_one(void)
+{
+	printf(YEL "\n\n************************************************************\n\n" RESET);
+	printf("\t\t\tPART ONE\n\n");
+	printf(YEL "************************************************************\n\n" RESET);
+}
+
+void	print_additional(void)
+{
+	printf(YEL "\n\n************************************************************\n\n" RESET);
+	printf("\t\tADDITIONAL FUNCTIONS\n\n");
+	printf(YEL "************************************************************\n\n" RESET);
+}
+
+void	print_bonus(void)
+{
+	printf(YEL "\n\n************************************************************\n\n" RESET);
+	printf("\t\t\tBONUS\n\n");
+	printf(YEL "************************************************************\n\n" RESET);
 }
 
 void	print_ft(char *ft_name)
@@ -33,6 +50,8 @@ void	print_ft(char *ft_name)
 void	print_function(char *ft_name)
 {
 	printf("%s\t" RESET, ft_name);
+	if (strlen(ft_name) < 8)
+		printf("\t");
 }
 
 void	print_failed(char *test_name)

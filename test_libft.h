@@ -28,18 +28,26 @@ typedef struct s_test
 }	t_test;
 
 // First part
+void	test_bzero(void);
 void	test_memset(void);
 void	test_memcpy(void);
 void	test_memccpy(void);
+void	test_memmove(void);
+void	test_memchr(void);
+void	test_memcmp(void);
 void	test_strdup(void);
 void	test_strcpy(void);
 void	test_strncpy(void);
 void	test_strcat(void);
 void	test_strncat(void);
 void	test_strlcat(void);
+void	test_strchr(void);
+void	test_strrchr(void);
+void	test_strlen(void);
 void	test_strstr(void);
 void	test_strnstr(void);
 void	test_strcmp(void);
+void	test_strncmp(void);
 void	test_atoi(void);
 void	test_isalpha(void);
 void	test_isdigit(void);
@@ -96,6 +104,9 @@ void	evaluate(t_test *test);
 
 // Print functions
 void	print_banner(void);
+void	print_part_one(void);
+void	print_additional(void);
+void	print_bonus(void);
 void	print_ft(char *ft_name);
 void	print_function(char *ft_name);
 void	print_failed(char *test_name);

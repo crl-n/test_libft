@@ -1,49 +1,30 @@
-#include "libft.h"
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   test_strlcat.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/02 11:14:11 by cnysten           #+#    #+#             */
+/*   Updated: 2021/12/02 11:16:29 by cnysten          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void	test1(void)
+#include "test_libft.h"
+
+void	test_strlcat(void)
 {
-	char	s[] = "abc\0def";
-	char	d[50] = "xyz\0ijk";
-	char	s2[] = "abc\0def";
-	char	d2[50] = "xyz\0ijk";
+	t_test	*test = new_test();
+	char	s1[] = "xyz";
+	char	s2[] = "xyz";
+	char	d1[10] = "abc";
+	char	d2[10] = "abc";
 
-	printf("\nTest 1\n");
+	print_function("FT_STRLCAT");
 
-	printf("ft_strlcat: %zu\n", ft_strlcat(d, s, 50));
-	for (int i = 0; i < 50; i++)
-		printf("%c", d[i]);
-	printf("\n");
-
-	printf("strlcat: %zu\n", strlcat(d2, s2, 50));
-	for (int i = 0; i < 50; i++)
-		printf("%c", d2[i]);
-	printf("\n");
-}
-
-void	test2(void)
-{
-	char	s[] = "abcdef";
-	char	d[50] = "xyz";
-	char	s2[] = "abcdef";
-	char	d2[50] = "xyz";
-
-	printf("\nTest 2\n");
-
-	printf("ft_strlcat: %zu\n", ft_strlcat(d, s, 50));
-	for (int i = 0; i < 50; i++)
-		printf("%c", d[i]);
-	printf("\n");
-
-	printf("strlcat: %zu\n", strlcat(d2, s2, 50));
-	for (int i = 0; i < 50; i++)
-		printf("%c", d2[i]);
-	printf("\n");
-}
-
-int	main(void)
-{
-	test1();
-	test2();
-	return (0);
+	strlcat(d1, s1, 10);
+	ft_strlcat(d2, s2, 10);
+	test_string(d1, d2, test);
+	evaluate(test);
+	free(test);
 }

@@ -34,11 +34,12 @@ function adt() {
 
 void	test_'$1'(void)
 {
-	t_test *	test = new_test();
+	t_test	*test = new_test();
 
 	print_function("'$UPPER'");
 
 	evaluate(test);
+	free(test);
 }' >> $FNAME
 		echo '✓ test_'$1'.c created'
 	else
