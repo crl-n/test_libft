@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 10:45:11 by cnysten           #+#    #+#             */
-/*   Updated: 2021/11/04 13:19:36 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/03 16:26:57 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,6 @@ void	test_memalloc(void)
 
 	evaluate(test);
 	free(test);
+	if (s1)
+		free(s1);
 }

@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 17:19:47 by cnysten           #+#    #+#             */
-/*   Updated: 2021/12/01 17:07:14 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/03 16:17:30 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	test_itoa(void)
 	if (!test_string("-2147483648", s5, test))
 		printf("ft_itoa(-2147483648): %s\n", s5);
 
-	evluate(test);
+	evaluate(test);
 
 	free(test);
 	free(s1);

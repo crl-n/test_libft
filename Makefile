@@ -13,6 +13,18 @@
 NAME = test_libft
 
 SRCS = main.c\
+	   test_striter.c \
+	   test_toupper.c \
+	   test_tolower.c \
+	   test_strnew.c \
+	   test_strnequ.c \
+	   test_strmapi.c \
+	   test_strmap.c \
+	   test_strequ.c \
+	   test_strdel.c \
+	   test_strclr.c \
+	   test_memdel.c \
+	   test_memalloc.c \
 	   test_strncmp.c \
 	   test_strrchr.c \
 	   test_strchr.c \
@@ -62,6 +74,14 @@ SRCS = main.c\
 	   test_lstmap.c \
 
 LIBSRCS = ../libft/ft_memset.c \
+		  ../libft/ft_striter.c \
+		  ../libft/ft_toupper.c \
+		  ../libft/ft_tolower.c \
+		  ../libft/ft_strmapi.c \
+		  ../libft/ft_strmap.c \
+		  ../libft/ft_strclr.c \
+		  ../libft/ft_memdel.c \
+		  ../libft/ft_memalloc.c \
 		  ../libft/ft_isascii.c \
 		  ../libft/ft_isprint.c \
 		  ../libft/ft_isalnum.c \

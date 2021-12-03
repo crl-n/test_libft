@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 14:36:32 by cnysten           #+#    #+#             */
-/*   Updated: 2021/12/01 18:03:18 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/03 18:58:59 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ void	test_size(size_t expected, size_t actual, t_test *test)
 
 int		test_memory(void *expected, void *actual, t_test *test)
 {
+	//if (!expected || !actual || !test)
+	//	return (-1);
 	(test->target)++;
 	if (memcmp(expected, actual, (size_t)(sizeof (actual))) == 0)
 	{
