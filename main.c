@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 18:05:28 by cnysten           #+#    #+#             */
-/*   Updated: 2021/12/02 13:11:09 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/03 16:04:07 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,28 +45,28 @@ int	main(void)
 	test_isalnum();
 	test_isascii();
 	test_isprint();
-	//test_toupper();
-	//test_tolower();
+	test_toupper();
+	test_tolower();
 
 	// Second part
 	print_additional();
-	// test_memalloc();
-	// test_memdel();
-	// test_strnew();
-	// test_strdel();
-	// test_strclr();
-	// test_striter();
-	// test_striteri();
-	// test_strmap();
-	// test_strmapi();
-	// test_strequ();
-	// test_strnequ();
+	test_memalloc();
+	test_memdel();
+	test_strnew();
+	test_strdel();
+	test_strclr();
+	test_striter();
+	test_striteri();
+	test_strmap();
+	test_strmapi();
+	test_strequ();
+	test_strnequ();
 	test_strsub();
 	test_strjoin();
 	test_strtrim();
 	test_strsplit();
 	test_itoa();
-	//test_putnbr(); // How to test?
+	test_putnbr(); // How to test?
 
 	// Bonus part
 	print_bonus();
@@ -74,7 +74,7 @@ int	main(void)
 	test_lstdelone();
 	test_lstdel();
 	test_lstadd();
-	//test_lstiter();
+	test_lstiter();
 	test_lstmap();
 
 	// 5 Extra functions
