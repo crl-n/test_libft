@@ -6,6 +6,8 @@ void	test_tolower(void)
 
 	print_function("FT_TOLOWER");
 
+	test_string("abc", ft_tolower("ABC"), test);
+
 	evaluate(test);
 	free(test);
 }
