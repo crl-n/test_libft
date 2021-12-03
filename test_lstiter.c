@@ -14,5 +14,15 @@
 
 void	test_lstiter(void)
 {
+	t_test	*test = new_test();
+
 	print_function("FT_LSTITER");
+
+	// Create list
+	// Add content
+	// Use lstiter to change content
+	// Test
+
+	evaluate(test);
+	free(test);
 }

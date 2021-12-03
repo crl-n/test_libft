@@ -14,6 +14,7 @@
 
 void	test_lstnew(void)
 {
+	t_test	*test = new_test();
 	char	*content = "This is data";
 	char	*content2 = "";
 	t_list	*lst = ft_lstnew(content, 13);
@@ -21,11 +22,15 @@ void	test_lstnew(void)
 	t_list	*lst3 = ft_lstnew(NULL, 0);
 	
 	print_function("FT_LSTNEW");
-	test_str(content, lst->content, "Same content");
-	test_diff_adr(content, lst->content, "Different address");
-	test_str(content2, lst2->content, "Empty string.");
-	test_adr(NULL, lst3->content, "Null content");
-	test_size_t(0, lst3->content_size, "Null content size");
+	test_string(content, lst->content, test);
+	test_diff_adr(content, lst->content, test);
+	test_string(content2, lst2->content, test);
+	test_address(NULL, lst3->content, test);
+	test_size(0, lst3->content_size, test);
+
+	evaluate(test);
+
+	free(test);
 	free(lst->content);
 	free(lst2->content);
 	free(lst3->content);
