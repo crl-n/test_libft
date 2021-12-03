@@ -10,26 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
+#include "test_libft.h"
 
-int	main(void)
+void	test_memalloc(void)
 {
-	int		*arr;
-	long	*larr;
-	int		a;
+	t_test	*test = new_test();
+	char	*s1 = (char *) ft_memalloc(5);
 
-	arr = ft_memalloc(4 * sizeof (int));
-	larr = ft_memalloc(4 * sizeof (long));
+	print_function("FT_MEMALLOC");
 
-	for (size_t i = 0; i < 4; i++)
-		printf("%d ", arr[i]);
-	printf("\n");
-	for (size_t i = 0; i < 4; i++)
-		printf("%ld ", larr[i]);
-	ft_putchar('\n');
-	free(arr);
-	while (1)
-		a = 1 + 1;
-	return (0);
+	test_memory("\0\0\0\0", s1, test);
+
+	evaluate(test);
+	free(test);
 }

@@ -58,12 +58,22 @@ void	test_tolower(void);
 void	test_toupper(void);
 
 // Second part
+void	test_memalloc(void);
+void	test_memdel(void);
 void	test_strnew(void);
+void	test_strdel(void);
+void	test_strclr(void);
+void	test_striter(void);
+void	test_striteri(void);
+void	test_strmap(void);
+void	test_strmapi(void);
+void	test_strequ(void);
+void	test_strnequ(void);
 void	test_strsub(void);
 void	test_strjoin(void);
-void	test_itoa(void);
 void	test_strtrim(void);
 void	test_strsplit(void);
+void	test_itoa(void);
 void	test_putnbr(void);
 
 // Bonus part

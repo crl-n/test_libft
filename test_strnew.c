@@ -14,6 +14,14 @@
 
 void	test_strnew(void)
 {
+	t_test	*test = new_test();
+	char	*s1;
+
 	print_function("FT_STRNEW");
 
+	s1 = ft_strnew(5);
+	test_memory("\0\0\0\0", s1, test);
+
+	evaluate(test);
+	free(test);
 }
