@@ -20,6 +20,8 @@ t_list	*ok(t_list *elem)
 
 void	test_lstmap(void)
 {
+	t_test	*test = new_test();
+
 	print_function("FT_LSTMAP");
 
 	t_list	*head = ft_lstnew("head", 5);
@@ -32,13 +34,16 @@ void	test_lstmap(void)
 	
 	new = ft_lstmap(head, ok);
 
-	test_str("OK", new->content, "Head content mapped");
-	test_str("OK", (new->next)->content, "Second content mapped");
-	test_str("OK", ((new->next)->next)->content, "Third content mapped");
-	test_str("head", head->content, "Head content mapped");
-	test_str("second", (head->next)->content, "Second content mapped");
-	test_str("third", ((head->next)->next)->content, "Third content mapped");
+	test_string("OK", new->content, test);
+	test_string("OK", (new->next)->content, test);
+	test_string("OK", ((new->next)->next)->content, test);
+	test_string("head", head->content, test);
+	test_string("second", (head->next)->content, test);
+	test_string("third", ((head->next)->next)->content, test);
 
+	evaluate(test);
+
+	free(test);
 	free_list(&head);
 	free_list(&new);
 }
