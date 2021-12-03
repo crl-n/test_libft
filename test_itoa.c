@@ -14,25 +14,32 @@
 
 void	test_itoa(void)
 {
+	t_test	*test = new_test();
 	char	*s1 = ft_itoa(123);
 	char	*s2 = ft_itoa(-123);
 	char	*s3 = ft_itoa(0);
 	char	*s4 = ft_itoa(2147483647);
 	char	*s5 = ft_itoa(-2147483648);
+
 	print_function("FT_ITOA");
 
-	test_str("123", s1, "123");
-	test_str("-123", s2, "-123");
-	//printf("ft_itoa(-123): %s\n", ft_itoa(-123));
-	test_str("0", s3, "0");
-	test_str("2147483647", s4, "MAX INT");
-	test_str("-2147483648", s5, "MIN INT");
-	//printf("ft_itoa(-2147483648): %s\n", ft_itoa(-2147483648));
-	
+	if (!test_string("123", s1, test))
+		printf("ft_itoa(123): %s\n", s1);
+	if (!test_string("-123", s2, test))
+		printf("ft_itoa(-123): %s\n", s2);
+	if (!test_string("0", s3, test))
+		printf("ft_itoa(0): %s\n", s3);
+	if (!test_string("2147483647", s4, test))
+		printf("ft_itoa(2147483647): %s\n", s4);
+	if (!test_string("-2147483648", s5, test))
+		printf("ft_itoa(-2147483648): %s\n", s5);
+
+	evluate(test);
+
+	free(test);
 	free(s1);
 	free(s2);
 	free(s3);
 	free(s4);
 	free(s5);
-
 }
