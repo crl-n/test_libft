@@ -95,6 +95,7 @@ void	test_lstpop_left(void);
 // Test functions
 void	test_int(int expected, int actual, char *test_name);
 int		test_integer(int expected, int actual, t_test *test);
+int		test_char(char expected, char actual, t_test *test);
 void	test_size_t(size_t expected, size_t actual, char *test_name);
 void	test_size(size_t expected, size_t actual, t_test *test);
 void	test_str(char *expected, char *actual, char *test_name);
@@ -103,7 +104,7 @@ void	test_mem(void *expected, void *actual, char *test_name);
 int		test_memory(void *expected, void *actual, t_test *test);
 int		test_address(void *expected, void *actual, t_test *test);
 void	test_adr(void *expected, void *actual, char *test_name);
-void	test_diff_adr(void *expected, void *actual, char *test_name);
+void	test_diff_adr(void *expected, void *actual, t_test *test);
 void	test_str_arr(char **expected, char **actual, size_t len, char *test_name);
 void	test_lst(t_list *expected, t_list *actual, t_test *test);
 
