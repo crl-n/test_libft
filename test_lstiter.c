@@ -12,7 +12,27 @@
 
 #include "test_libft.h"
 
+static void	f(t_list *elem)
+{
+	strcpy(elem->content, "OK");
+}
+
 void	test_lstiter(void)
 {
+	t_test	*test = new_test();
+	t_list	*lst = ft_lstnew("KO", 3);
+
 	print_function("FT_LSTITER");
+
+	ft_lstadd(lst, ft_lstnew("KO", 3);
+	ft_lstadd(lst, ft_lstnew("KO", 3);
+
+	ft_lstiter(lst, f);
+
+	test_string("OK", lst->content, test);
+	test_string("OK", lst->next->content, test);
+	test_string("OK", lst->next->next->content, test);
+
+	evaluate(test);
+	free(test);
 }

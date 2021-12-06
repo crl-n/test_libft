@@ -6,6 +6,8 @@ void	test_toupper(void)
 
 	print_function("FT_TOUPPER");
 
+	test_string("ABC", ft_toupper("abc"), test);
+
 	evaluate(test);
 	free(test);
 }
