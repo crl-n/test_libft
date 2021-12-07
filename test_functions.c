@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 14:36:32 by cnysten           #+#    #+#             */
-/*   Updated: 2021/12/03 18:58:59 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/06 18:59:59 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,22 @@ int		test_string(char *expected, char *actual, t_test *test)
 	}
 }
 
+int		test_char(char expected, char actual, t_test *test)
+{
+	(test->target)++;
+	if (expected == actual)
+	{
+		test->passed++;
+		print_pass();
+		return (1);
+	}
+	else
+	{
+		print_fail();
+		return (0);
+	}
+}
+
 int		test_address(void *expected, void *actual, t_test * test)
 {
 	(test->target)++;
@@ -103,6 +119,16 @@ int		test_integer(int expected, int actual, t_test * test)
 		return (0);
 	}
 }
+
+void	test_diff_adr(void *original, void *actual, t_test *test)
+{
+	(test->target)++;
+	if (original == actual)
+		print_fail();
+	else
+		print_pass();
+}
+
 
 // Old test funcs
 
@@ -141,14 +167,6 @@ void	test_mem(void *expected, void *actual, char *test_name)
 void	test_adr(void *expected, void *actual, char *test_name)
 {
 	if (expected != actual)
-		print_failed(test_name);
-	else
-		print_passed(test_name);
-}
-
-void	test_diff_adr(void *original, void *actual, char *test_name)
-{
-	if (original == actual)
 		print_failed(test_name);
 	else
 		print_passed(test_name);
