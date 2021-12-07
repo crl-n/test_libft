@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 14:36:32 by cnysten           #+#    #+#             */
-/*   Updated: 2021/12/07 14:11:50 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/07 18:21:57 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,6 +134,24 @@ void	test_diff_adr(void *original, void *actual, t_test *test)
 	}
 }
 
+void	test_str_arr(char **expected, char **actual, size_t len, t_test *test)
+{
+	size_t	i;
+
+	(test->target)++;
+	i = 0;
+	while (i < len)
+	{
+		if (strcmp(expected[i], actual[i]) != 0)
+		{
+			print_fail();
+			return ;
+		}
+		i++;
+	}
+	test->passed++;
+	print_pass();
+}
 
 // Old test funcs
 
@@ -177,19 +195,3 @@ void	test_adr(void *expected, void *actual, char *test_name)
 		print_passed(test_name);
 }
 
-void	test_str_arr(char **expected, char **actual, size_t len, char *test_name)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < len)
-	{
-		if (strcmp(expected[i], actual[i]) != 0)
-		{
-			print_failed(test_name);
-			return ;
-		}
-		i++;
-	}
-	print_passed(test_name);
-}
