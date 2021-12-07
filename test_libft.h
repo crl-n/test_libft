@@ -105,7 +105,7 @@ int		test_memory(void *expected, void *actual, t_test *test);
 int		test_address(void *expected, void *actual, t_test *test);
 void	test_adr(void *expected, void *actual, char *test_name);
 void	test_diff_adr(void *expected, void *actual, t_test *test);
-void	test_str_arr(char **expected, char **actual, size_t len, char *test_name);
+void	test_str_arr(char **expected, char **actual, size_t len, t_test *test);
 void	test_lst(t_list *expected, t_list *actual, t_test *test);
 
 // Other functions
