@@ -42,12 +42,7 @@ SRCS = main.c\
 	   test_isalnum.c \
 	   test_isdigit.c \
 	   test_isalpha.c \
-	   test_lstpop_left.c \
-	   test_lstadd_back.c \
 	   other_functions.c \
-	   test_lstpop.c \
-	   test_lstget.c \
-	   test_lstsize.c \
 	   test_strstr.c \
 	   test_strncat.c \
 	   test_striteri.c \
@@ -72,6 +67,12 @@ SRCS = main.c\
 	   test_lstadd.c \
 	   test_lstiter.c \
 	   test_lstmap.c \
+
+EXTRASRCS = test_lstpop_left.c \
+			test_lstadd_back.c \
+			test_lstpop.c \
+			test_lstget.c \
+			test_lstsize.c \
 
 LIBSRCS = ../libft/ft_memset.c \
 		  ../libft/ft_striter.c \

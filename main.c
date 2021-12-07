@@ -78,10 +78,10 @@ int	main(void)
 	test_lstmap();
 
 	// 5 Extra functions
-	test_lstsize();
-	test_lstget();
-	test_lstpop();
-	test_lstpop_left();
-	test_lstadd_back();
+	//test_lstsize();
+	//test_lstget();
+	//test_lstpop();
+	//test_lstpop_left();
+	//test_lstadd_back();
 	return (0);
 }
