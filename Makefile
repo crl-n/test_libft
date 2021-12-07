@@ -6,7 +6,7 @@
 #    By: cnysten <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/05 12:54:18 by cnysten           #+#    #+#              #
-#    Updated: 2021/12/06 18:29:10 by cnysten          ###   ########.fr        #
+#    Updated: 2021/12/07 14:09:53 by cnysten          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,12 +42,7 @@ SRCS = main.c\
 	   test_isalnum.c \
 	   test_isdigit.c \
 	   test_isalpha.c \
-	   test_lstpop_left.c \
-	   test_lstadd_back.c \
 	   other_functions.c \
-	   test_lstpop.c \
-	   test_lstget.c \
-	   test_lstsize.c \
 	   test_strstr.c \
 	   test_strncat.c \
 	   test_striteri.c \
@@ -89,11 +84,6 @@ LIBSRCS = ../libft/ft_memset.c \
 		  ../libft/ft_isalpha.c \
 		  ../libft/ft_islower.c \
 		  ../libft/ft_isupper.c \
-		  ../libft/ft_lstpop_left.c \
-		  ../libft/ft_lstadd_back.c \
-		  ../libft/ft_lstpop.c \
-		  ../libft/ft_lstget.c \
-		  ../libft/ft_lstsize.c \
 		  ../libft/ft_striteri.c \
 		  ../libft/ft_strdel.c \
 		  ../libft/ft_bzero.c \
@@ -134,7 +124,17 @@ LIBSRCS = ../libft/ft_memset.c \
 		  ../libft/ft_lstmap.c \
 		  ../libft/ft_lstiter.c \
 
+ADDTESTS = test_lstpop.c \
+		   test_lstget.c \
+		   test_lstsize.c \
+		   test_lstpop_left.c \
+		   test_lstadd_back.c \
 
+EXTRASRCS = ../libft/ft_lstpop_left.c \
+		  ../libft/ft_lstadd_back.c \
+		  ../libft/ft_lstpop.c \
+		  ../libft/ft_lstget.c \
+		  ../libft/ft_lstsize.c \
 
 LIB = ../libft/libft.a
 

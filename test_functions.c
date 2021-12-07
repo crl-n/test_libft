@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 14:36:32 by cnysten           #+#    #+#             */
-/*   Updated: 2021/12/06 18:59:59 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/07 14:11:50 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,9 +124,14 @@ void	test_diff_adr(void *original, void *actual, t_test *test)
 {
 	(test->target)++;
 	if (original == actual)
+	{
 		print_fail();
+	}
 	else
+	{
+		test->passed++;
 		print_pass();
+	}
 }
 
 
