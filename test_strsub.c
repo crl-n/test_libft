@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 15:41:12 by cnysten           #+#    #+#             */
-/*   Updated: 2021/12/01 17:07:56 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/07 18:23:39 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	test_strsub(void)
 {
+	t_test	*test = new_test();
+
 	print_function("FT_STRSUB");
 	
 	char	*s1 = ft_strsub("abcdef", 0, 6);
@@ -22,12 +24,14 @@ void	test_strsub(void)
 	char	*s4 = ft_strsub("420xyz", 1, 0);
 	char	*s5 = ft_strsub(NULL, 1, 3);
 
-	test_str("abcdef", s1, "Original string as substring (\"abcdef\", 0, 6)");
-	test_str("def", s2, "Basic substring at end of str (\"abcdef\", 3, 6)");
-	test_str("xyz", s3, "Basic substring in the middle (\"abcxyzdef\", 3, 6)");
-	test_str("", s4, "Len 0 (\"420xyz\", 1, 0)");
-	test_adr(NULL, s5, "Null string (NULL, 1, 3)");
+	test_string("abcdef", s1, test);
+	test_string("def", s2, test);
+	test_string("xyz", s3, test);
+	test_string("", s4, test);
+	test_address(NULL, s5, test);
 
+	evaluate(test);
+	free(test);
 	free(s1);
 	free(s2);
 	free(s3);

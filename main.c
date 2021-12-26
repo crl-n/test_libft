@@ -6,7 +6,7 @@
 /*   By: cnysten <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 18:05:28 by cnysten           #+#    #+#             */
-/*   Updated: 2021/12/03 16:04:07 by cnysten          ###   ########.fr       */
+/*   Updated: 2021/12/07 14:04:45 by cnysten          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,10 +78,10 @@ int	main(void)
 	test_lstmap();
 
 	// 5 Extra functions
-	//test_lstsize();
-	//test_lstget();
-	//test_lstpop();
-	//test_lstpop_left();
-	//test_lstadd_back();
+	test_lstsize();
+	test_lstget();
+	test_lstpop();
+	test_lstpop_left();
+	test_lstadd_back();
 	return (0);
 }
