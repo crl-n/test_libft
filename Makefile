@@ -151,7 +151,7 @@ HDR = ../libft/libft.h
 all: $(NAME)
 
 $(NAME): $(SRCS)
-	gcc -fno-builtin -g -Wall -Wextra -Werror $(SRCS) $(LIBSRCS) -I../libft/
+	gcc -fno-builtin -g -Wall -Wextra -Werror $(SRCS) $(ADDTESTS) $(EXTRASRCS) $(LIBSRCS) -I../libft/
 
 clean:
 
