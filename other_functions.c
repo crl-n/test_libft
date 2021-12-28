@@ -11,6 +11,28 @@
 /* ************************************************************************** */
 
 #include "test_libft.h"
+#include <unistd.h>
+#include <fcntl.h>
+
+int	redirect_stdout(char *filename, int *saved_stdout, int *fd)
+{
+	if (!filename)
+		return (-1);
+	*saved_stdout = dup(STDOUT_FILENO);
+	*fd = open(filename, O_RDWR | O_CREAT, 0777);
+	if (*fd < 0)
+		return (-1);
+	dup2(*fd, STDOUT_FILENO);
+	return (0);
+}
+
+void	restore_stdout(int	saved_stdout, int fd)
+{
+	close(STDOUT_FILENO);
+	dup2(saved_stdout, 1);
+	close(saved_stdout);
+	close(fd);
+}
 
 void	free_list(t_list **head)
 {
