@@ -43,10 +43,8 @@ t_test	*new_test(void)
 
 void	evaluate(t_test *test)
 {
-	if (test->target < 4)
-		printf("\t\t");
 	if (test->passed == test->target)
-		puts("\tPassed!");
+		printf("%24s\n", "Passed!");
 	else
-		puts("\tFailed.");
+		printf("%24s\n", "Failed.");
 }
