@@ -66,7 +66,8 @@ int	main(void)
 	test_strtrim();
 	test_strsplit();
 	test_itoa();
-	test_putnbr(); // How to test?
+	test_putchar();
+	test_putnbr();
 
 	// Bonus part
 	print_bonus();
