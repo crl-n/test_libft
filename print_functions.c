@@ -40,35 +40,14 @@ void	print_bonus(void)
 	printf(YEL "************************************************************\n\n" RESET);
 }
 
-void	print_ft(char *ft_name)
-{
-	printf("\x1B[35m");
-	printf("%s\n", ft_name);
-	printf("\033[0;37m");
-}
-
 void	print_function(char *ft_name)
 {
-	printf("%s\t" RESET, ft_name);
-	if (strlen(ft_name) < 8)
-		printf("\t");
-}
-
-void	print_failed(char *test_name)
-{
-	printf(" • %s \033[0;31m[𝙭]\n", test_name);
-	printf("\033[0;37m");
+	printf("%-24s" RESET, ft_name);
 }
 
 void	print_fail(void)
 {
 	printf(RED "✦ " RESET);
-}
-
-void	print_passed(char *test_name)
-{
-	printf(" • %s \033[0;32m[✓]\n", test_name);
-	printf("\033[0;37m");
 }
 
 void	print_pass(void)
