@@ -10,14 +10,11 @@ void	test_putchar(void)
 	print_function("FT_PUTCHAR");
 
 	// Redirect stdout
-	fd = open("putchar_output", O_RDWR | O_CREAT, 0777);
-	if (fd < 0)
+	if (redirect_stdout("putchar_output", &saved_stdout, &fd) < 0)
 	{
 		free(test);
 		return ;
 	}
-	saved_stdout = dup(STDOUT_FILENO);
-	dup2(fd, STDOUT_FILENO);
 
 	ft_putchar('a');
 	ft_putchar('b');
@@ -26,11 +23,21 @@ void	test_putchar(void)
 	ft_putchar(' ');
 
 	// Restore stdout
-	close(STDOUT_FILENO);
-	dup2(saved_stdout, STDOUT_FILENO);
-	close(fd);
-	close(saved_stdout);
+	restore_stdout(saved_stdout, fd);
+
+	// Read output file
+	char	*line = NULL;
+	size_t	linecap = 0;
+	FILE	*file = fopen("putchar_output", "r");
+	if (file)
+	{
+		getline(&line, &linecap, file);
+		fclose(file);
+	}
+
+	test_string("abc* ", line, test);
 
 	evaluate(test);
 	free(test);
+	free(line);
 }
