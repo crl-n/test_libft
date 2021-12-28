@@ -110,6 +110,8 @@ void	test_str_arr(char **expected, char **actual, size_t len, t_test *test);
 void	test_lst(t_list *expected, t_list *actual, t_test *test);
 
 // Other functions
+int		redirect_stdout(char *filename, int *saved_stdout, int *fd);
+void	restore_stdout(int saved_stdout, int fd);
 void	free_list(t_list **head);
 t_test	*new_test(void);
 void	evaluate(t_test *test);
