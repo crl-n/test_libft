@@ -25,14 +25,11 @@ void	test_putnbr(void)
 	print_function("FT_PUTNBR");
 
 	// Redirect stdout to file
-	saved_stdout = dup(STDOUT_FILENO);
-	fd = open("putnbr_output", O_RDWR | O_CREAT, 0777);
-	if (fd < 0)
+	if (redirect_stdout("putnbr_output", &saved_stdout, &fd) < 0)
 	{
 		free(test);
 		return ;
 	}
-	dup2(fd, STDOUT_FILENO);
 
 	// Test cases
 	ft_putnbr(-42);
@@ -50,10 +47,7 @@ void	test_putnbr(void)
 	ft_putnbr(-2147483648);
 
 	// Close file and restore stdout
-	close(STDOUT_FILENO);
-	dup2(saved_stdout, 1);
-	close(saved_stdout);
-	close(fd);
+	restore_stdout(saved_stdout, fd);
 
 	// Open and read output file
 	file = fopen("putnbr_output", "r");
