@@ -13,7 +13,8 @@
 NAME = test_libft
 
 SRCS = main.c\
-	   test_striter.c \
+				   test_putchar.c \
+			   test_striter.c \
 	   test_toupper.c \
 	   test_tolower.c \
 	   test_strnew.c \
