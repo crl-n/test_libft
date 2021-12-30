@@ -12,16 +12,6 @@
 
 #include "test_libft.h"
 
-static char**	free_str_arr(char **arr, size_t len)
-{
-	for (size_t i = 0; i < len; i++)
-	{
-		free(arr[i]);
-	}
-	free(arr);
-	return (NULL);
-}
-
 void	test_strsplit(void)
 {
 	t_test	*test = new_test();
@@ -33,11 +23,11 @@ void	test_strsplit(void)
 	print_function("FT_STRSPLIT");
 
 	test_str_arr(correct1, r1, 3, test);
-	//print_str_arr(r1);
-	r1 = free_str_arr(r1, 3);
 	test_str_arr(correct2, r2, 5, test);
-	//print_str_arr(r2);
-	r2 = free_str_arr(r2, 5);
+
+	free_str_arr(r1, 3);
+	free_str_arr(r2, 5);
+
 	evaluate(test);
 	free(test);
 }
