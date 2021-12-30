@@ -13,6 +13,59 @@
 #include "test_libft.h"
 #include <unistd.h>
 #include <fcntl.h>
+#include <errno.h>
+
+void	free_str_arr(char **arr, size_t n)
+{
+	size_t	i = 0;
+
+	while (i < n)
+		free(arr[i++]);
+	free(arr);
+}
+
+/*
+*	file_to_str_arr() creates a array or strings out of a file's lines.
+*/
+
+char	**file_to_str_arr(char *filename, size_t n)
+{
+	size_t	linecap = 0;
+	char	*line = NULL;
+	char	**lines;
+	size_t	i = 0;
+	FILE	*file;
+
+	file = fopen(filename, "r");
+	if (!file)
+	{
+		printf("%s", strerror(errno));
+		return (NULL);
+	}
+	lines = (char **) malloc(sizeof (char *) * n);
+	if (!lines)
+	{
+		perror("memory could not be allocated for lines");
+		fclose(file);
+		return (NULL);
+	}
+	ssize_t	ret = 0;
+	while (i < n)
+	{
+		line = NULL;
+		ret = getline(&line, &linecap, file);
+		lines[i] = line;
+		i++;
+		if (ret < 1)
+			break ;
+	}
+	fclose(file);
+	return (lines);
+}
+
+/*
+*	redirect_stdout() opens a file and redirects stdout to write to it.
+*/
 
 int	redirect_stdout(char *filename, int *saved_stdout, int *fd)
 {
@@ -26,6 +79,10 @@ int	redirect_stdout(char *filename, int *saved_stdout, int *fd)
 	return (0);
 }
 
+/*
+* restore_stdout() undoes the redirection of stdout done by redirect_stdout(). The file descriptor fd should designate the file stdout was redirected to.
+*/
+
 void	restore_stdout(int	saved_stdout, int fd)
 {
 	close(STDOUT_FILENO);
@@ -33,6 +90,10 @@ void	restore_stdout(int	saved_stdout, int fd)
 	close(saved_stdout);
 	close(fd);
 }
+
+/*
+* free_list() frees all the nodes of a linked list.
+*/
 
 void	free_list(t_list **head)
 {
@@ -50,7 +111,6 @@ void	free_list(t_list **head)
 	*head = NULL;
 }
 
-
 t_test	*new_test(void)
 {
 	t_test	*test;
@@ -65,8 +125,13 @@ t_test	*new_test(void)
 
 void	evaluate(t_test *test)
 {
+	size_t	n = 38 - (test->target * 2);
+	char	pad[n];
+
+	memset(pad, ' ', n);
+	pad[n - 1] = '\0';
 	if (test->passed == test->target)
-		printf("%24s\n", "Passed!");
+		printf("%s%s\n", pad, "Passed!");
 	else
-		printf("%24s\n", "Failed.");
+		printf("%s%s\n", pad, "Failed.");
 }
