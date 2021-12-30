@@ -42,7 +42,7 @@ void	print_bonus(void)
 
 void	print_function(char *ft_name)
 {
-	printf("%-24s" RESET, ft_name);
+	printf("%-16s" RESET, ft_name);
 }
 
 void	print_fail(void)
