@@ -9,8 +9,8 @@
 # include <ctype.h>
 # include "libft.h"
 
-# define INT_MIN "-2147483648"
 # define INT_MAX "2147483647"
+# define INT_MIN "-2147483648"
 # define RED   "\x1B[31m"
 # define GRN   "\x1B[32m"
 # define YEL   "\x1B[33m"
@@ -110,6 +110,8 @@ void	test_str_arr(char **expected, char **actual, size_t len, t_test *test);
 void	test_lst(t_list *expected, t_list *actual, t_test *test);
 
 // Other functions
+void	free_str_arr(char **arr, size_t n);
+char	**file_to_str_arr(char *filename, size_t n);
 int		redirect_stdout(char *filename, int *saved_stdout, int *fd);
 void	restore_stdout(int saved_stdout, int fd);
 void	free_list(t_list **head);
