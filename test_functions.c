@@ -120,6 +120,24 @@ int		test_integer(int expected, int actual, t_test * test)
 	}
 }
 
+int		test_sign(int expected, int actual, t_test * test)
+{
+	(test->target)++;
+	if ((expected == 0 &&  actual == 0)
+	|| (expected < 0 &&  actual < 0)
+	|| (expected > 0 &&  actual > 0))
+	{
+		test->passed++;
+		print_pass();
+		return (1);
+	}
+	else
+	{
+		print_fail();
+		return (0);
+	}
+}
+
 void	test_diff_adr(void *original, void *actual, t_test *test)
 {
 	(test->target)++;

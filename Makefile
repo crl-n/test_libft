@@ -158,6 +158,7 @@ $(EVAL): $(TEST_SRCS) $(LIB_SRCS) $(EXTRA_TESTS) $(EXTRA_SRCS)
 clean:
 
 fclean: clean
-	/bin/rm $(NAME)
+	rm $(NAME)
+	rm -rf test_libft.dSYM
 
 re: fclean all

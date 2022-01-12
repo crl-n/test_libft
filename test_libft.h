@@ -96,6 +96,7 @@ void	test_lstpop_left(void);
 // Test functions
 void	test_int(int expected, int actual, char *test_name);
 int		test_integer(int expected, int actual, t_test *test);
+int		test_sign(int expected, int actual, t_test *test);
 int		test_char(char expected, char actual, t_test *test);
 void	test_size_t(size_t expected, size_t actual, char *test_name);
 void	test_size(size_t expected, size_t actual, t_test *test);
