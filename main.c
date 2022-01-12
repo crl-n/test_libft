@@ -84,6 +84,7 @@ int	main(void)
 	test_lstpop();
 	test_lstpop_left();
 	test_lstadd_back();
+	test_itoa_base();
 #endif
 	return (0);
 }

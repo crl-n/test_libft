@@ -132,12 +132,14 @@ EXTRA_SRCS = $(LIBFT_PATH)ft_lstpop_left.c \
 		  $(LIBFT_PATH)ft_lstpop.c \
 		  $(LIBFT_PATH)ft_lstget.c \
 		  $(LIBFT_PATH)ft_lstsize.c \
+		  $(LIBFT_PATH)ft_itoa_base.c \
 
 EXTRA_TESTS = test_lstpop.c \
 		   test_lstget.c \
 		   test_lstsize.c \
 		   test_lstpop_left.c \
 		   test_lstadd_back.c \
+		   test_itoa_base.c \
 
 LIB = $(LIBFT_PATH)libft.a
 

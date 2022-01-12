@@ -91,7 +91,7 @@ void	test_lstadd_back(void);
 void	test_lstget(void);
 void	test_lstpop(void);
 void	test_lstpop_left(void);
-//void	test_lstrev(void);
+void	test_itoa_base(void);
 
 // Test functions
 void	test_int(int expected, int actual, char *test_name);
