@@ -16,7 +16,6 @@ int	main(void)
 {
 	print_banner();
 
-
 	// First part
 	print_part_one();
 	test_memset();
@@ -78,11 +77,13 @@ int	main(void)
 	test_lstiter();
 	test_lstmap();
 
+#ifdef PERSONAL
 	// 5 Extra functions
-	//test_lstsize();
-	//test_lstget();
-	//test_lstpop();
-	//test_lstpop_left();
-	//test_lstadd_back();
+	test_lstsize();
+	test_lstget();
+	test_lstpop();
+	test_lstpop_left();
+	test_lstadd_back();
+#endif
 	return (0);
 }

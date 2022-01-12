@@ -12,9 +12,11 @@
 
 NAME = test_libft
 
-SRCS = main.c\
-				   test_putchar.c \
-			   test_striter.c \
+LIBFT_PATH = ../libft/
+
+TEST_SRCS = main.c\
+	   test_putchar.c \
+	   test_striter.c \
 	   test_toupper.c \
 	   test_tolower.c \
 	   test_strnew.c \
@@ -69,90 +71,89 @@ SRCS = main.c\
 	   test_lstiter.c \
 	   test_lstmap.c \
 
-EXTRASRCS = test_lstpop_left.c \
-			test_lstadd_back.c \
-			test_lstpop.c \
-			test_lstget.c \
-			test_lstsize.c \
+LIB_SRCS = $(LIBFT_PATH)ft_memset.c \
+		  $(LIBFT_PATH)ft_striter.c \
+		  $(LIBFT_PATH)ft_toupper.c \
+		  $(LIBFT_PATH)ft_tolower.c \
+		  $(LIBFT_PATH)ft_strmapi.c \
+		  $(LIBFT_PATH)ft_strmap.c \
+		  $(LIBFT_PATH)ft_strclr.c \
+		  $(LIBFT_PATH)ft_memdel.c \
+		  $(LIBFT_PATH)ft_memalloc.c \
+		  $(LIBFT_PATH)ft_isascii.c \
+		  $(LIBFT_PATH)ft_isprint.c \
+		  $(LIBFT_PATH)ft_isalnum.c \
+		  $(LIBFT_PATH)ft_isdigit.c \
+		  $(LIBFT_PATH)ft_isalpha.c \
+		  $(LIBFT_PATH)ft_islower.c \
+		  $(LIBFT_PATH)ft_isupper.c \
+		  $(LIBFT_PATH)ft_striteri.c \
+		  $(LIBFT_PATH)ft_strdel.c \
+		  $(LIBFT_PATH)ft_bzero.c \
+		  $(LIBFT_PATH)ft_memcpy.c \
+		  $(LIBFT_PATH)ft_memccpy.c \
+		  $(LIBFT_PATH)ft_memmove.c \
+		  $(LIBFT_PATH)ft_memchr.c \
+		  $(LIBFT_PATH)ft_memcmp.c \
+		  $(LIBFT_PATH)ft_strlen.c \
+		  $(LIBFT_PATH)ft_strdup.c \
+		  $(LIBFT_PATH)ft_strcpy.c \
+		  $(LIBFT_PATH)ft_strncpy.c \
+		  $(LIBFT_PATH)ft_strcat.c \
+		  $(LIBFT_PATH)ft_strncat.c \
+		  $(LIBFT_PATH)ft_strlcat.c \
+		  $(LIBFT_PATH)ft_strchr.c \
+		  $(LIBFT_PATH)ft_strrchr.c \
+		  $(LIBFT_PATH)ft_strstr.c \
+		  $(LIBFT_PATH)ft_strnstr.c \
+		  $(LIBFT_PATH)ft_strcmp.c \
+		  $(LIBFT_PATH)ft_strncmp.c \
+		  $(LIBFT_PATH)ft_atoi.c \
+		  $(LIBFT_PATH)ft_itoa.c \
+		  $(LIBFT_PATH)ft_strnew.c \
+		  $(LIBFT_PATH)ft_strtrim.c \
+		  $(LIBFT_PATH)ft_strequ.c \
+		  $(LIBFT_PATH)ft_strnequ.c \
+		  $(LIBFT_PATH)ft_strsub.c \
+		  $(LIBFT_PATH)ft_strjoin.c \
+		  $(LIBFT_PATH)ft_strsplit.c \
+		  $(LIBFT_PATH)ft_putnbr.c \
+		  $(LIBFT_PATH)ft_putchar.c \
+		  $(LIBFT_PATH)ft_putstr.c \
+		  $(LIBFT_PATH)ft_lstnew.c \
+		  $(LIBFT_PATH)ft_lstdelone.c \
+		  $(LIBFT_PATH)ft_lstdel.c \
+		  $(LIBFT_PATH)ft_lstadd.c \
+		  $(LIBFT_PATH)ft_lstmap.c \
+		  $(LIBFT_PATH)ft_lstiter.c \
 
-LIBSRCS = ../libft/ft_memset.c \
-		  ../libft/ft_striter.c \
-		  ../libft/ft_toupper.c \
-		  ../libft/ft_tolower.c \
-		  ../libft/ft_strmapi.c \
-		  ../libft/ft_strmap.c \
-		  ../libft/ft_strclr.c \
-		  ../libft/ft_memdel.c \
-		  ../libft/ft_memalloc.c \
-		  ../libft/ft_isascii.c \
-		  ../libft/ft_isprint.c \
-		  ../libft/ft_isalnum.c \
-		  ../libft/ft_isdigit.c \
-		  ../libft/ft_isalpha.c \
-		  ../libft/ft_islower.c \
-		  ../libft/ft_isupper.c \
-		  ../libft/ft_striteri.c \
-		  ../libft/ft_strdel.c \
-		  ../libft/ft_bzero.c \
-		  ../libft/ft_memcpy.c \
-		  ../libft/ft_memccpy.c \
-		  ../libft/ft_memmove.c \
-		  ../libft/ft_memchr.c \
-		  ../libft/ft_memcmp.c \
-		  ../libft/ft_strlen.c \
-		  ../libft/ft_strdup.c \
-		  ../libft/ft_strcpy.c \
-		  ../libft/ft_strncpy.c \
-		  ../libft/ft_strcat.c \
-		  ../libft/ft_strncat.c \
-		  ../libft/ft_strlcat.c \
-		  ../libft/ft_strchr.c \
-		  ../libft/ft_strrchr.c \
-		  ../libft/ft_strstr.c \
-		  ../libft/ft_strnstr.c \
-		  ../libft/ft_strcmp.c \
-		  ../libft/ft_strncmp.c \
-		  ../libft/ft_atoi.c \
-		  ../libft/ft_itoa.c \
-		  ../libft/ft_strnew.c \
-		  ../libft/ft_strtrim.c \
-		  ../libft/ft_strequ.c \
-		  ../libft/ft_strnequ.c \
-		  ../libft/ft_strsub.c \
-		  ../libft/ft_strjoin.c \
-		  ../libft/ft_strsplit.c \
-		  ../libft/ft_putnbr.c \
-		  ../libft/ft_putchar.c \
-		  ../libft/ft_putstr.c \
-		  ../libft/ft_lstnew.c \
-		  ../libft/ft_lstdelone.c \
-		  ../libft/ft_lstdel.c \
-		  ../libft/ft_lstadd.c \
-		  ../libft/ft_lstmap.c \
-		  ../libft/ft_lstiter.c \
+EXTRA_SRCS = $(LIBFT_PATH)ft_lstpop_left.c \
+		  $(LIBFT_PATH)ft_lstadd_back.c \
+		  $(LIBFT_PATH)ft_lstpop.c \
+		  $(LIBFT_PATH)ft_lstget.c \
+		  $(LIBFT_PATH)ft_lstsize.c \
 
-ADDTESTS = test_lstpop.c \
+EXTRA_TESTS = test_lstpop.c \
 		   test_lstget.c \
 		   test_lstsize.c \
 		   test_lstpop_left.c \
 		   test_lstadd_back.c \
 
-EXTRASRCS = ../libft/ft_lstpop_left.c \
-		  ../libft/ft_lstadd_back.c \
-		  ../libft/ft_lstpop.c \
-		  ../libft/ft_lstget.c \
-		  ../libft/ft_lstsize.c \
+LIB = $(LIBFT_PATH)libft.a
 
-LIB = ../libft/libft.a
+LIBFLAG = -L$(LIBFT_PATH) -lft
 
-LIBFLAG = -L../libft/ -lft
-
-HDR = ../libft/libft.h
+CFLAGS = -fno-builtin -g -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME): $(SRCS)
-	gcc -fno-builtin -g -Wall -Wextra -Werror $(SRCS) $(ADDTESTS) $(EXTRASRCS) $(LIBSRCS) -I../libft/
+$(NAME): $(TEST_SRCS) $(LIB_SRCS)
+	gcc $(CFLAGS) -DPERSONAL -o $(NAME) $(TEST_SRCS) $(LIB_SRCS) $(EXTRA_TESTS) $(EXTRA_SRCS) -I$(LIBFT_PATH)
+
+eval: $(EVAL)
+	gcc $(CFLAGS) -o $(NAME) $(TEST_SRCS) $(LIB_SRCS) -I$(LIBFT_PATH)
+
+$(EVAL): $(TEST_SRCS) $(LIB_SRCS) $(EXTRA_TESTS) $(EXTRA_SRCS)
 
 clean:
 
