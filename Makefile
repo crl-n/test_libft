@@ -6,7 +6,7 @@
 #    By: cnysten <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/05 12:54:18 by cnysten           #+#    #+#              #
-#    Updated: 2021/12/07 14:09:53 by cnysten          ###   ########.fr        #
+#    Updated: 2022/01/13 14:40:48 by cnysten          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,8 +85,6 @@ LIB_SRCS = $(LIBFT_PATH)ft_memset.c \
 		  $(LIBFT_PATH)ft_isalnum.c \
 		  $(LIBFT_PATH)ft_isdigit.c \
 		  $(LIBFT_PATH)ft_isalpha.c \
-		  $(LIBFT_PATH)ft_islower.c \
-		  $(LIBFT_PATH)ft_isupper.c \
 		  $(LIBFT_PATH)ft_striteri.c \
 		  $(LIBFT_PATH)ft_strdel.c \
 		  $(LIBFT_PATH)ft_bzero.c \
@@ -133,6 +131,8 @@ EXTRA_SRCS = $(LIBFT_PATH)ft_lstpop_left.c \
 		  $(LIBFT_PATH)ft_lstget.c \
 		  $(LIBFT_PATH)ft_lstsize.c \
 		  $(LIBFT_PATH)ft_itoa_base.c \
+		  $(LIBFT_PATH)ft_islower.c \
+		  $(LIBFT_PATH)ft_isupper.c \
 
 EXTRA_TESTS = test_lstpop.c \
 		   test_lstget.c \
